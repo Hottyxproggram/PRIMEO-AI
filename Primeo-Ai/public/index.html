@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primeo AI</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div id="sidebar" class="sidebar">
+    <button id="sidebar-toggle">☰</button>
+    <nav>
+      <ul>
+        <li><button class="nav-btn" data-section="chat">Chat</button></li>
+        <li><button class="nav-btn" data-section="image">Image Gen</button></li>
+        <li><button class="nav-btn" data-section="video">Video Gen</button></li>
+        <li><button class="nav-btn" data-section="code">Code Gen</button></li>
+        <li><button class="nav-btn" data-section="settings">Settings</button></li>
+      </ul>
+    </nav>
+    <div class="api-selector">
+      <select id="api-selector">
+        <option value="DeepSeek">DeepSeek</option>
+        <option value="Gemini">Gemini</option>
+        <option value="Blackbox">Blackbox</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- CHAT SECTION -->
+    <div id="chat-section" class="content-section active">
+      <div id="chat-window" class="chat-window"></div>
+      <div class="chat-input-area">
+        <textarea id="chat-input" placeholder="Type your message..."></textarea>
+        <button id="send-btn">Send</button>
+      </div>
+      <button id="scroll-top-btn" class="scroll-btn">↑</button>
+      <button id="scroll-bottom-btn" class="scroll-btn">↓</button>
+    </div>
+
+    <!-- IMAGE GENERATOR -->
+    <div id="image-section" class="content-section">
+      <textarea id="image-prompt" placeholder="Enter image prompt..."></textarea>
+      <select id="image-style">
+        <option value="photorealistic">Photorealistic</option>
+        <option value="anime">Anime</option>
+        <option value="cyberpunk">Cyberpunk</option>
+        <option value="cartoon">Cartoon</option>
+      </select>
+      <button id="generate-image-btn">Generate Image</button>
+      <div id="image-results" class="results-grid"></div>
+    </div>
+
+    <!-- VIDEO GENERATOR -->
+    <div id="video-section" class="content-section">
+      <textarea id="video-prompt" placeholder="Enter video prompt..."></textarea>
+      <select id="video-style">
+        <option value="cinematic">Cinematic</option>
+        <option value="documentary">Documentary</option>
+        <option value="anime">Anime</option>
+      </select>
+      <button id="generate-video-btn">Generate Video</button>
+      <div id="video-results" class="results-grid"></div>
+    </div>
+
+    <!-- CODE GENERATOR -->
+    <div id="code-section" class="content-section">
+      <textarea id="code-prompt" placeholder="Enter coding prompt..."></textarea>
+      <select id="code-language">
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="cpp">C++</option>
+        <option value="rust">Rust</option>
+      </select>
+      <button id="generate-code-btn">Generate Code</button>
+      <div id="code-results"></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="settings-section" class="content-section">
+      <label>
+        Theme:
+        <select id="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="gradient">Gradient</option>
+        </select>
+      </label>
+      <label>
+        Font Size:
+        <input type="range" id="font-size" min="12" max="24" value="16">
+      </label>
+      <label>
+        Persona:
+        <select id="persona">
+          <option value="default">Default</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+      <label>
+        Enable Animations:
+        <input type="checkbox" id="enable-animations" checked>
+      </label>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
